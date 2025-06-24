@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+body {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+@layer base {
+  h1 {
+    @apply text-center font-bold text-5xl;
+  }
+  button {
+    @apply rounded-4xl bg-purple-600 p-2;
+  }
+  input {
+    @apply overflow-auto w-full;
+  }
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
