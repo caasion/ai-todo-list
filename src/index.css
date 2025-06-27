@@ -5,18 +5,6 @@ body {
   color: white;
 }
 
-@layer base {
-  h1 {
-    @apply text-center font-bold text-5xl;
-  }
-  button {
-    @apply rounded-4xl bg-purple-600 p-2 hover:bg-purple-700 cursor-pointer;
-  }
-  input {
-    @apply overflow-auto w-full;
-  }
-}
-
 @layer components {
   .input-area {
     @apply w-full mx-0.5 h-max bg-slate-600 rounded-4xl px-4 py-2 flex-center;

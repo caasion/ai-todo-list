@@ -46,7 +46,13 @@ const GenerationButton = ({ promptResponse, setPromptResponse }: GenerationButto
         rows={1}
       />
 
-      <button type="button" onClick={handleSubmit}>Submit</button>
+      <button 
+        type="button" 
+        onClick={handleSubmit}
+        className='rounded-4xl bg-purple-600 p-2 hover:bg-purple-700 cursor-pointer'
+      >
+        Submit
+      </button>
     </div>
     
   )
