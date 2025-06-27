@@ -30,6 +30,9 @@ const Todo = () => {
     let updatedList = [...todoList];
     updatedList.push(NewTodoItem);
     setTodoList(updatedList);
+
+    setNewDesc("");
+    setNewTitle("")
   };
 
   const handleCompleteTodo = (index: number) => {
@@ -37,6 +40,12 @@ const Todo = () => {
     updatedList[index] = {...updatedList[index], completed: !updatedList[index].completed};
     setTodoList(updatedList);
   };
+
+  const handleDeleteTodo = (index: number) => {
+    let updatedList = [...todoList];
+    updatedList.splice(index, 1)
+    setTodoList(updatedList);
+  }
 
   return (
     <div className='_todo-wrapper'>
@@ -77,13 +86,16 @@ const Todo = () => {
             </div>
 
             <div className='w-full'>
-              <h3 className='text-4xl font-bold'>{task.title}</h3>
-              <p>{task.desc}</p>
+              <h3 className={`text-2xl font-semibold ${task.completed && "line-through text-slate-300"}`}>{task.title}</h3>
+              <p className={`text-slate-300 ${task.completed && "line-through text-slate-400"}`}>{task.desc}</p>
             </div>
 
             
             <div className='flex'>
-              <MdDeleteOutline className='text-3xl' />
+              <MdDeleteOutline 
+                className='text-3xl hover:text-red-400 active:text-red-500' 
+                onClick={() => handleDeleteTodo(index)}
+              />
             </div>
           </div>
         ))
