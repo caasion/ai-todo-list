@@ -5,12 +5,6 @@ body {
   color: white;
 }
 
-@layer components {
-  .input-area {
-    @apply w-full mx-0.5 h-max bg-slate-600 rounded-4xl px-4 py-2 flex-center;
-  }
-}
-
 @utility flex-center {
   @apply flex justify-center items-center;
 }

@@ -17,35 +17,38 @@ function App() {
   }, [])
 
   return (
-    <>
-      <header className='sticky top-0 left-0 w-full z-50 shadow bg-slate-700'>
-          <h1 className='py-5 text-center font-bold text-5xl'>To-do list improver</h1>
+    <div className="_main flex flex-col h-screen overflow-hidden">
+      {/* Sticky Header */}
+      <header className="_header sticky top-0 left-0 w-full z-50 shadow bg-slate-700">
+        <h1 className="py-5 text-center font-bold text-5xl text-white">
+          To-do list improver
+        </h1>
       </header>
-      
-      <div className='h-screen flex flex-1 overflow-hidden'>
 
-        <div className='w-1/2 overflow-y-auto'>
-          <p className='text-amber'>test</p>
+      {/* Main Content */}
+      <div className="_main-content-container flex flex-1 overflow-hidden">
+        {/* Left Panel */}
+        <div className="_left-panel w-1/2 overflow-y-auto p-4 bg-slate border-r-4 border-r-slate-400">
+          <p className="text-amber-600">test</p>
         </div>
 
-        <div className='w-1/2 overflow-y-auto'>
-          <main className='flex-1 overflow-y-auto pt-20 pb-20'>
+        {/* Right Panel */}
+        <div className="_right-panel w-1/2 flex flex-col overflow-hidden bg-slate">
+          {/* Scrollable content */}
+          <div className="_chat-content-container flex-1 overflow-y-auto p-4">
             <ResponseBox promptResponse={promptResponse} />
-          </main>
-          
-          <div className='fixed bottom-0 w-full z-50 pd-30'>
-            <GenerationButton promptResponse={promptResponse} setPromptResponse={setPromptResponse}/>
+          </div>
+
+          {/* Fixed bottom button inside panel */}
+          <div className="_chat-prompt-container sticky bottom-0 bg-slate p-4 z-10">
+            <GenerationButton
+              promptResponse={promptResponse}
+              setPromptResponse={setPromptResponse}
+            />
           </div>
         </div>
-        
-
-        
-          
       </div>
-      
-      
-      
-    </>
+    </div>
   )
 }
 

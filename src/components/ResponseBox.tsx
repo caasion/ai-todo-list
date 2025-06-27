@@ -9,7 +9,7 @@ const ResponseBox = ( {promptResponse}: ResponseBoxProps ) => {
 
   return (
     <div>
-      <div className='flex flex-col mb-25'>
+      <div className='_chat-content-inner-container flex flex-col'>
         {promptResponse.map((response, index) => (
         <div className='bg-slate-500 outline-2 outline-slate-900 p-5 mx-2'>
           <Markdown key={index}>

@@ -32,7 +32,7 @@ const GenerationButton = ({ promptResponse, setPromptResponse }: GenerationButto
 
 
   return (
-    <div className="input-area">
+    <div className="chat-prompt-inner-container w-full h-max bg-slate-600 rounded-4xl px-4 py-2 flex-center">
       <textarea 
         value={prompt} 
         onChange={(e) => setPrompt(e.target.value)} 
