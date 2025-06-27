@@ -5,6 +5,12 @@ body {
   color: white;
 }
 
+@layer components {
+  button {
+    @apply rounded-4xl bg-purple-600 p-2 hover:bg-purple-700 cursor-pointer;
+  }
+}
+
 @utility flex-center {
   @apply flex justify-center items-center;
 }

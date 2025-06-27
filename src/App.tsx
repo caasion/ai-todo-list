@@ -5,6 +5,7 @@ import { signInAnon } from './contexts/authContext/auth.ts';
 import './App.css'
 import GenerationButton from './components/GenerationButton.tsx';
 import ResponseBox from './components/ResponseBox.tsx';
+import Todo from './components/Todo.tsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,7 +30,7 @@ function App() {
       <div className="_main-content-container flex flex-1 overflow-hidden">
         {/* Left Panel */}
         <div className="_left-panel w-1/2 overflow-y-auto p-4 bg-slate border-r-4 border-r-slate-400">
-          <p className="text-amber-600">test</p>
+          <Todo></Todo>
         </div>
 
         {/* Right Panel */}
