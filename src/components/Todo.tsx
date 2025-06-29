@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { MdDeleteOutline, MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
+import type {TodoItem} from "../App.tsx";
 
 const PRIORITY_LABELS = ["None", "Low", "Medium", "High", "Urgent"];
 const ENERGY_LABELS = ["None", "Low", "Medium", "High"];
 
-interface TodoItem {
-  title: String;
-  desc: String;
-  priority: number; // 0 - No priority; 1 - Low; 2 - Medium; 3 - HIgh; 4 - Urgent & Important
-  energy: number; // 0 - No energy; 1 - Low; 2 - Medium; 3 - High
-  completed: boolean;
+interface TodoProps {
+  todoList: TodoItem[];
+  setTodoList: React.Dispatch<React.SetStateAction<TodoItem[]>>;
 }
 
-const Todo = () => {
-  // Todo List
-  const [todoList, setTodoList] = useState<TodoItem[]>([]);
-
+const Todo = ( {todoList, setTodoList}: TodoProps ) => {
   // Creating a New Task
   const [newTitle, setNewTitle] = useState("");
   const [newDesc, setNewDesc] = useState("");
