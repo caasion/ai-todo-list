@@ -26,10 +26,12 @@ function App() {
 
       {/* Main Content */}
       <div className="_main-content-container flex flex-1 overflow-hidden">
-        {/* Left Panel */}
-        <div className="_left-panel w-1/2 overflow-y-auto p-4 bg-slate border-r-4 border-r-slate-400">
+        {/* Middle Panel */}
+        <div className="middle-panel w-1/2 overflow-y-auto p-4 bg-slate border-r-4 border-r-slate-400">
           <Todo></Todo>
         </div>
+
+        
 
         {/* Right Panel */}
         <div className="_right-panel w-1/2 flex flex-col overflow-hidden bg-slate">
@@ -52,3 +54,10 @@ function App() {
 }
 
 export default App
+
+// Should ask:
+// How much energy do you have?
+// What mood are you in?
+// What do you need right now? be productive? self-care? want to learn? want to be active? want to be social?
+
+// Gives feedback -- you might be trying to do too much!
