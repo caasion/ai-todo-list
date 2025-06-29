@@ -12,12 +12,26 @@ body {
 }
 
 @layer components {
+  .panel {
+    scrollbar-gutter: stable;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
   .checkbox {
     @apply text-3xl hover:text-purple-300 active:text-purple-400 cursor-pointer;
   }
 
+  .todo-input-item {
+    @apply flex items-center p-4;
+  }
+
   .input-area {
-    @apply bg-slate-700 p-4 focus:outline-2 focus:outline-purple-400 transition-shadow w-full mr-5;
+    @apply bg-slate-800 p-2 rounded-sm outline-1 focus:outline-2 focus:outline-purple-400 transition-shadow w-full;
+  }
+
+  .input-dropdown {
+    @apply bg-slate-800 p-2 rounded-sm outline-1 focus:outline-2 focus:outline-purple-400 transition-shadow;
   }
 }
 

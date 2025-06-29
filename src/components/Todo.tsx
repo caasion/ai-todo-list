@@ -76,9 +76,9 @@ const Todo = () => {
 
   return (
     <div className='_todo-wrapper'>
-      <div className='_todo-input flex flex-col bg-slate-600 p-4 items-center'>
+      <div className='_todo-input flex flex-col bg-slate-700 border-2 border-slate-300 rounded-2xl p-4 items-center'>
         <div className='w-full flex'>
-          <div className='todo-input-item w-full flex items-center'>
+          <div className='todo-input-item w-full'>
             <label className='mr-3 text-bold text-2xl '>Title:</label>
             <input 
               type="text" 
@@ -89,7 +89,7 @@ const Todo = () => {
           </div>
           <div className='todo-input-item'>
             <label className='mr-3 text-bold text-2xl '>Priority:</label>
-            <select value={newPriority} onChange={(e) => setNewPriority(Number(e.target.value))} id="priority">
+            <select value={newPriority} onChange={(e) => setNewPriority(Number(e.target.value))} id="priority" className='input-dropdown'>
               <option value={0}>None</option>
               <option value={1}>Low</option>
               <option value={2}>Medium</option>
@@ -99,7 +99,7 @@ const Todo = () => {
           </div>
           <div className='todo-input-item'>
             <label className='mr-3 text-bold text-2xl '>Energy:</label>
-            <select value={newEnergy} onChange={(e) => setNewEnergy(Number(e.target.value))} id="priority">
+            <select value={newEnergy} onChange={(e) => setNewEnergy(Number(e.target.value))} id="energy" className='input-dropdown'>
               <option value={0}>None</option>
               <option value={1}>Low</option>
               <option value={2}>Medium</option>
@@ -107,26 +107,27 @@ const Todo = () => {
             </select>
           </div>
         </div>
-        
-
-        <div className='todo-input-item w-full flex items-center'>
-          <label className='mr-3 text-bold text-2xl'>Description:</label>
-          <input 
-            type="text" 
-            value={newDesc} 
-            onChange={(e) => setNewDesc(e.target.value)}
-            placeholder='Task Description' 
-            className='input-area' />
+        <div className='flex w-full items-center'>
+          <div className='todo-input-item w-full'>
+            <label className='mr-3 text-bold text-2xl'>Description:</label>
+            <input 
+              type="text" 
+              value={newDesc} 
+              onChange={(e) => setNewDesc(e.target.value)}
+              placeholder='Task Description' 
+              className='input-area' />
+          </div>
+          
+          <div className='todo-input-item'>
+            <button className='_todo-input-create ' onClick={() => handleNewTodo()}>Add</button>
+          </div>
         </div>
         
-        <div className='_todo-input-item'>
-          <button className='_todo-input-create ' onClick={() => handleNewTodo()}>Add</button>
-        </div>
       </div>
 
       <div className='_todo-list'>
         { todoList.sort((a, b) => compareTasks(a, b)).map((task, index) =>  (
-          <div className='_task-item flex items-center bg-slate-600 m-3 py-2 px-2' key={index}>
+          <div className='_task-item flex items-center bg-slate-600 m-3 p-2 rounded-2xl' key={index}>
             <div className='m-3'>
               {task.completed 
                 ? (<MdCheckBox className='checkbox' onClick={() => handleCompleteTodo(index)} />) 
