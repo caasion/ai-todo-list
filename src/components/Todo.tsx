@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { MdDeleteOutline, MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
+import { MdDeleteOutline, MdCheckBoxOutlineBlank, MdCheckBox, MdDragIndicator } from "react-icons/md";
+
 
 interface TodoItem {
   title: String;
@@ -77,7 +78,11 @@ const Todo = () => {
 
       <div className='_todo-list'>
         { todoList.map((task, index) =>  (
-          <div className='_task-item flex items-center bg-slate-600 m-3 py-2 px-4' key={index}>
+          <div className='_task-item flex items-center bg-slate-600 m-3 py-2 px-2' key={index}>
+            <div className='mr-3'>
+              <MdDragIndicator className='text-2xl hover:text-purple-300' />
+            </div>
+
             <div className='mr-3'>
               {task.completed 
                 ? (<MdCheckBox className='checkbox' onClick={() => handleCompleteTodo(index)} />) 
@@ -91,7 +96,7 @@ const Todo = () => {
             </div>
 
             
-            <div className='flex'>
+            <div className='flex mr-3'>
               <MdDeleteOutline 
                 className='text-3xl hover:text-red-400 active:text-red-500' 
                 onClick={() => handleDeleteTodo(index)}
